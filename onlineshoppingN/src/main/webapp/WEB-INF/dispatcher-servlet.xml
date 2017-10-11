@@ -14,7 +14,7 @@
     http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd        
     ">
     <context:component-scan base-package="com.cmc.in.Controller"/>
-    
+    <context:component-scan base-package="com.cms.shoopingbackend.daoimpl"/>
     
     
 	<bean id="viewResolver"
@@ -24,5 +24,11 @@
 		<property name="suffix" value=".jsp" />
 		
 	</bean>
+	
+	
+	<!-- Loading static resources -->
+	<mvc:annotation-driven />
+	
+	<mvc:resources location="/assets/" mapping="/resources/**" />
     
     </beans>
